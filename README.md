@@ -1,0 +1,2 @@
+# EScript
+easy lang
