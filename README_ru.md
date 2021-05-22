@@ -1,4 +1,4 @@
-# Документация Escript
+# Документация EScript
 
 # Установка
 Скачать можно через git или вот [тут](https://github.com/MegaSoft-real/EScript/releases).
