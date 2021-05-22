@@ -1,7 +1,7 @@
 # Документация Escript
 
 # Установка
-Ссылка на скачивание вот [тут](https://github.com/MegaSoft-real/EScript/releases).
+Скачать можно через git или вот [тут](https://github.com/MegaSoft-real/EScript/releases).
 Когда вы скачали(обязательно последнию версию), распакуйте архив. Если у вас не установлин Node.js, то по этой ссылке можно его скачать [тут](https://nodejs.org/dist/v14.17.0/node-v14.17.0-x64.msi). После установки перезаупстите ваш компьютер.
 # Использование
 Им очень легко пользоватся. У вас в папке есть файлы compile.bat для Windows, и compile.sh для Linux.
