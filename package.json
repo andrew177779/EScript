@@ -1,4 +1,19 @@
-{ 
-   "name_project": "Test",
-   "version_project": "1.0.0"
+{
+  "name": "escript",
+  "version": "0.0.6",
+  "description": "It's like TypeScript: You doing it on EScript, but it compiles in JavaScript",
+  "main": "main.js",
+  "scripts": {
+    "test": "node main.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/MegaSoft-real/EScript.git"
+  },
+  "author": "Andrei Stekolnikov",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/MegaSoft-real/EScript/issues"
+  },
+  "homepage": "https://github.com/MegaSoft-real/EScript#readme"
 }
