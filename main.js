@@ -15,7 +15,7 @@ terminal("Reading the config.json file");
 const {
     name_project,
     version_project,
-} = require('./config.json', function(err){
+} = require('./package.json', function(err){
     if(err){
         error_terminal(err);
     } else {
@@ -53,7 +53,7 @@ for(var index = 0; index < code.length; index++){
                     var print = [];
                     for(; index < code.length; index++){
                         done.push(code[index]);
-                        print.push(code[index]); // test
+                        print.push(code[index]);
                         if(code[index] === ";"){
                             done.push("\n");
                             break;
@@ -61,6 +61,19 @@ for(var index = 0; index < code.length; index++){
                     }
                     terminal(`${print.join('')} output value`);
                     break;
+            }
+            break;
+        case "v":
+            index++;
+            if(code[index] === "a"){
+                index++;
+                if(code[index] === "r"){
+                    index -= 2;
+                    for(; index < code.length; index++){
+                        done.push(code[index]);
+                        if(code[index] === ";"){break;}
+                    }
+                }
             }
             break;
         default:
@@ -77,4 +90,4 @@ fs.writeFile("index.js", done.join(''), function(err){
         terminal("Compilation compeleted successfully!");
     }
 });}
-setTimeout(start_compile, 3000);
+setTimeout(start_compile, 200);
