@@ -16,7 +16,7 @@ To use compile.sh, go to the repository folder with terminal and type next comma
 
     chmod +x compile.sh
     ./compile.sh
-To code in EScript, open index.es and do coding!
+To code in EScript, open index.es in your main IDE and do coding!
 # Configuration
 In terminal, type:
     npm init
