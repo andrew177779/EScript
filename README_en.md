@@ -19,6 +19,7 @@ To use compile.sh, go to the repository folder with terminal and type next comma
 To code in EScript, open index.es in your main IDE and do coding!
 # Configuration
 In terminal, type:
+
     npm init
 and type everything about your project!
 Did a typo? Don't worry, you can fix it in "package.json" file.
