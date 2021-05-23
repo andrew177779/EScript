@@ -53,7 +53,7 @@ for(var index = 0; index < code.length; index++){
                     var print = [];
                     for(; index < code.length; index++){
                         done.push(code[index]);
-                        print.push(code[index]);
+                        print.push(code[index]); // test
                         if(code[index] === ";"){
                             done.push("\n");
                             break;
