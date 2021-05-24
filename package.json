@@ -1,7 +1,7 @@
 {
   "name": "escript",
   "version": "0.0.7",
-  "description": "<h2>It's like TypeScript: You doing it on EScript, but it compiles in JavaScript</h2>",
+  "description": "It's like TypeScript: You doing it on EScript, but it compiles in JavaScript",
   "main": "main.js",
   "scripts": {
     "test": "node main.js"
