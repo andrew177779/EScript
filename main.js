@@ -11,15 +11,16 @@ const fs = require("fs");
 
 terminal("Libraries are connected!");
 terminal("Config connection");
-terminal("Reading the config.json file");
+terminal("Reading the package.json file");
 const {
-    name_project,
-    version_project,
+    name,
+    description,
+    version,
 } = require('./package.json', function(err){
     if(err){
         error_terminal(err);
     } else {
-        terminal("config.json file read");
+        terminal("package.json file read");
     }
 });
 terminal("Config is connected");
