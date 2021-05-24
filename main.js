@@ -68,7 +68,7 @@ for(var index = 0; index < code.length; index++){
                         }
                     }
             break;
-        case "v":
+        case "v": // var
             index++;
             if(code[index] === "a"){
                 index++;
@@ -81,7 +81,24 @@ for(var index = 0; index < code.length; index++){
                 }
             }
             break;
-        case "c":
+        case "a": // alr
+            index++;
+            switch(code[index]){
+                case "l":
+                    index++;
+                    switch(code[index]){
+                        case "r":
+                            index -= 2;
+                            for(; index < code.length; index++){
+                                done.push(code[index]);
+                                if(code[index] === ";"){break;}
+                            }
+                            break;
+                    }
+                    break;
+            }
+            break;
+        case "c": // const
             done.push("c");
             index++;
             switch(code[index]){
@@ -104,7 +121,7 @@ for(var index = 0; index < code.length; index++){
                                                 else if(code[index] === "="){
                                                     index += 2;
                                                     switch(code[index]){
-                                                        case "i":
+                                                        case "i": // imp
                                                             index++;
                                                             switch(code[index]){
                                                                 case "m":
@@ -150,4 +167,4 @@ fs.writeFile("index.js", done.join(''), function(err){
         terminal("Compilation compeleted successfully!");
     }
 });}
-setTimeout(start_compile, 200);
+setTimeout(start_compile, 50);
