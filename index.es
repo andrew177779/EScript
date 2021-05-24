@@ -1,3 +1,4 @@
+const fs = imp("fs");
 wr("test");
 wr("fisting in ");
 wr("my ass");
