@@ -16,6 +16,7 @@ const {
     name,
     description,
     version,
+    source_code,
 } = require('./package.json', function(err){
     if(err){
         error_terminal(err);
@@ -36,7 +37,7 @@ function start_compile(){
 terminal("Compilation started");
 terminal("Reading the code file(index.es)");
 var codes = "";
-codes = fs.readFileSync("index.es", "utf8");
+codes = fs.readFileSync(source_code, "utf8");
 //codes.replace("\n", " ");
 var code = codes.split('');
 //var code_char = codes.split('');
