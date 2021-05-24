@@ -46,22 +46,26 @@ for(var index = 0; index < code.length; index++){
             index++;
             switch(code[index]){
                 case "r":
-                    terminal("Found wr commands, compiling in console.log");
-                    done.push("console.log");
-                    terminal("Added console.log to index.js code");
                     index++;
-                    var print = [];
-                    for(; index < code.length; index++){
-                        done.push(code[index]);
-                        print.push(code[index]);
-                        if(code[index] === ";"){
-                            done.push("\n");
+                    switch(code[index]) {
+                        case "(":
+                            terminal("Found wr commands, compiling in console.log");
+                            done.push("console.log(");
+                            terminal("Added console.log to index.js code");
+                            index++;
+                            var print = [];
+                            for(; index < code.length; index++){
+                                done.push(code[index]);
+                                print.push(code[index]);
+                                if(code[index] === ";"){
+                                    //done.push("\n");
+                                    break;
+                                }
+                            }
+                            terminal(`${print.join('')} output value`);
                             break;
                         }
                     }
-                    terminal(`${print.join('')} output value`);
-                    break;
-            }
             break;
         case "v":
             index++;
