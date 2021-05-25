@@ -18,7 +18,7 @@ To use compile.sh, go to the repository folder with terminal and type next comma
     ./compile.sh
 To code in EScript, open index.es in your main IDE and do coding!
 # Configuration
-In terminal, type:
+Delete package.json from repo, then in terminal, type:
 
     npm init
 and type everything about your project!
