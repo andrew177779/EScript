@@ -7,16 +7,22 @@ function error_terminal(string){
 
 terminal("Conecting libraries");
 
-const fs = require("fs");
+const files = 'scripts/';
+const fs = require('fs');
+var filePath = [];
 
 terminal("Libraries are connected!");
 terminal("Config connection");
-terminal("Reading the package.json file");
+terminal("Reading files");
+fs.readdirSync(files).forEach(file => {
+      filePath.push(file);
+});
+terminal("List files:");
+terminal(filePath.join(", "));
 const {
     name,
     description,
     version,
-    source_code,
 } = require('./package.json', function(err){
     if(err){
         error_terminal(err);
@@ -25,19 +31,11 @@ const {
     }
 });
 terminal("Config is connected");
-terminal("Compilation in progress");
-fs.writeFile("index.js", "Compiling...", function(err){
-    if (err) {
-        error_terminal(err);
-    } else {
-        terminal("File index.js created");
-    }
-});
-function start_compile(){
+for(var i = 0; i < filePath.length; i++){
 terminal("Compilation started");
-terminal("Reading the code file(index.es)");
+terminal(`Reading the code file(${filePath[i]})`);
 var codes = "";
-codes = fs.readFileSync(source_code, "utf8");
+codes = fs.readFileSync(`${files}/${filePath[i]}`, "utf8");
 //codes.replace("\n", " ");
 var code = codes.split('');
 //var code_char = codes.split('');
@@ -160,12 +158,13 @@ for(var index = 0; index < code.length; index++){
     
 }
 terminal("Done!");
-fs.writeFile("index.js", done.join(''), function(err){
+var b = i;
+fs.writeFile(`builds/${filePath[i]}.js`, done.join(''), function(err){
     if (err) {
         error_terminal(err);
     } else {
-        terminal("All your code is written in index.js");
+        terminal(`All code is written`);
         terminal("Compilation compeleted successfully!");
     }
-});}
-setTimeout(start_compile, 50);
+});
+}
