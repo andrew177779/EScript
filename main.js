@@ -20,9 +20,8 @@ fs.readdirSync(files).forEach(file => {
 terminal("List files:");
 terminal(filePath.join(", "));
 const {
-    name,
-    description,
     version,
+    author,
 } = require('./package.json', function(err){
     if(err){
         error_terminal(err);
@@ -80,23 +79,6 @@ for(var index = 0; index < code.length; index++){
                 }
             }
             break;
-        case "a": // alr
-            index++;
-            switch(code[index]){
-                case "l":
-                    index++;
-                    switch(code[index]){
-                        case "r":
-                            index -= 2;
-                            for(; index < code.length; index++){
-                                done.push(code[index]);
-                                if(code[index] === ";"){break;}
-                            }
-                            break;
-                    }
-                    break;
-            }
-            break;
         case "c": // const
             done.push("c");
             index++;
@@ -131,7 +113,21 @@ for(var index = 0; index < code.length; index++){
                                                                             switch(code[index]){
                                                                                 case "(":
                                                                                     done.push(" require");
-                                                                                    for(; index < code.length; index++){done.push(code[index]);}
+                                                                                    for(; index < code.length; index++){
+                                                                                        //done.push(code[index]);
+                                                                                        if(code[index] === "."){
+                                                                                            index++;
+                                                                                            if(code[index] === "e"){
+                                                                                                index++;
+                                                                                                if(code[index] === "s"){
+                                                                                                    done.push(".js");
+                                                                                                }
+                                                                                            }
+                                                                                        }
+                                                                                        else{
+                                                                                            done.push(code[index]);
+                                                                                        }
+                                                                                    }
                                                                                     break;
                                                                             }
                                                                             break;
@@ -157,14 +153,29 @@ for(var index = 0; index < code.length; index++){
     }
     
 }
-terminal("Done!");
 var b = i;
+fs.writeFile(`builds/start-${filePath[i]}.bat`, `node ${filePath[i]}.js`, function(err){
+    if (err) {
+        error_terminal(err);
+    } else {
+        terminal(`Create start bat file`);
+    }
+});
+fs.writeFile(`builds/start-${filePath[i]}.sh`, `node ${filePath[i]}.js`, function(err){
+    if (err) {
+        error_terminal(err);
+    } else {
+        terminal(`Create start sh file`);
+    }
+});
 fs.writeFile(`builds/${filePath[i]}.js`, done.join(''), function(err){
     if (err) {
         error_terminal(err);
     } else {
         terminal(`All code is written`);
-        terminal("Compilation compeleted successfully!");
+        terminal("Done!");
+        terminal(`Version: ${version}`);
+        terminal(`Author: ${author}`);
     }
 });
 }

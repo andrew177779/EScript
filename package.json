@@ -1,6 +1,6 @@
 {
   "name": "escript",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "It's like TypeScript: You doing it on EScript, but it compiles in JavaScript",
   "main": "main.js",
   "scripts": {
@@ -8,12 +8,12 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/MegaSoft-real/EScript.git"
+    "url": "git+https://github.com/andrew177779/EScript.git"
   },
   "author": "Andrei Stekolnikov",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/MegaSoft-real/EScript/issues"
+    "url": "https://github.com/andrew177779/EScript/issues"
   },
-  "homepage": "https://github.com/MegaSoft-real/EScript#readme"
+  "homepage": "https://github.com/andrew177779/EScript#readme"
 }
