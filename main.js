@@ -20,6 +20,7 @@ fs.readdirSync(files).forEach(file => {
 terminal("List files:");
 terminal(filePath.join(", "));
 const {
+    name,
     version,
     author,
 } = require('./package.json', function(err){
