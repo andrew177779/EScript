@@ -148,6 +148,21 @@ for(var index = 0; index < code.length; index++){
                     break;
             }
             break;
+        case "t": {
+            done.push("t");
+            index++;
+            switch (code[index]){
+                case "e":
+                    done.push("e");
+                    index++;
+                    switch(code[index]){
+                        case "r":
+                            done.push("r")
+                            index++;
+                            
+                    }
+            }
+        }
         default:
             done.push(code[index]);
             break;

@@ -1,5 +1,5 @@
 # EScript
-<h2>It's like TypeScript: You doing it on EScript, but it compiles in JavaScript</h2>
+## Node.js programming language
 
 # Docs
 Check docs [there](https://github.com/MegaSoft-real/EScript/tree/docs)
